@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>70136020-D358-4BA2-9C4E-24A4C0DCF912</string>
+	<key>IDESourceControlProjectName</key>
+	<string>SimpleSoccer</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>4D2F6C8311FB141F9D5DC2542C01699222CA4DAF</key>
+		<string>https://github.com/games/SimplerSoccer.git</string>
+		<key>E67F01F9F968AE77A86D5227840E5CC9AFFD2705</key>
+		<string>https://github.com/blackberry/GamePlay.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>gameplay/SimpleSoccer/SimpleSoccer.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>4D2F6C8311FB141F9D5DC2542C01699222CA4DAF</key>
+		<string>../../../..</string>
+		<key>E67F01F9F968AE77A86D5227840E5CC9AFFD2705</key>
+		<string>../../../../../../blackberry/GamePlay</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/games/SimplerSoccer.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>4D2F6C8311FB141F9D5DC2542C01699222CA4DAF</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>E67F01F9F968AE77A86D5227840E5CC9AFFD2705</string>
+			<key>IDESourceControlWCCName</key>
+			<string>GamePlay</string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>4D2F6C8311FB141F9D5DC2542C01699222CA4DAF</string>
+			<key>IDESourceControlWCCName</key>
+			<string>SimplerSoccer</string>
+		</dict>
+	</array>
+</dict>
+</plist>
