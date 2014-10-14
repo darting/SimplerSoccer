@@ -73,14 +73,107 @@
     <None Include="res\shaders\textured.vert">
       <Filter>res\shaders</Filter>
     </None>
+    <None Include="src\Params.ini">
+      <Filter>src</Filter>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\SoccerGame.h">
       <Filter>src</Filter>
     </ClInclude>
+    <ClInclude Include="src\constants.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\FieldPlayer.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\FieldPlayerStates.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Goal.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Goalkeeper.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\GoalKeeperStates.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ParamLoader.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\PlayerBase.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\resource.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\SoccerBall.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\SoccerMessages.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\SoccerPitch.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\SoccerTeam.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\SteeringBehaviors.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\SupportSpotCalculator.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\TeamStates.h">
+      <Filter>src</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\SoccerGame.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\FieldPlayer.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\FieldPlayerStates.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Goal.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Goalkeeper.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GoalKeeperStates.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ParamLoader.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\PlayerBase.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\SoccerBall.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\SoccerMessages.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\SoccerPitch.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\SoccerTeam.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\SteeringBehaviors.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\SupportSpotCalculator.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\TeamStates.cpp">
       <Filter>src</Filter>
     </ClCompile>
   </ItemGroup>

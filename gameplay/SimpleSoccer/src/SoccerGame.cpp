@@ -1,7 +1,18 @@
 #include "SoccerGame.h"
 
+#include "constants.h"
+#include "misc/utils.h"
+#include "Time/PrecisionTimer.h"
+#include "SoccerPitch.h"
+#include "misc/Cgdi.h"
+#include "ParamLoader.h"
+#include "Resource.h"
+#include "misc/WindowUtils.h"
+#include "debug/DebugConsole.h"
+
 // Declare our game instance
 SoccerGame game;
+SoccerPitch* g_SoccerPitch;
 
 SoccerGame::SoccerGame()
     : _scene(NULL), _wireframe(false)
@@ -21,6 +32,8 @@ void SoccerGame::initialize()
 
     spriteBatch = SpriteBatch::create("res/soccer_field.png");
 
+	g_SoccerPitch = new SoccerPitch(getWidth(), getHeight());
+
     
     _scene->addNode();
 
@@ -38,6 +51,8 @@ void SoccerGame::update(float elapsedTime)
 {
     // Rotate model
     _scene->findNode("box")->rotateY(MATH_DEG_TO_RAD((float)elapsedTime / 1000.0f * 180.0f));
+
+	g_SoccerPitch->Update();
 }
 
 void SoccerGame::render(float elapsedTime)
@@ -47,9 +62,12 @@ void SoccerGame::render(float elapsedTime)
     
     
     spriteBatch->start();
-    spriteBatch->draw(Rectangle(0, 0, getWidth(), getHeight()),
-                 Rectangle(0, 0, getWidth(), getHeight()), Vector4::one());
+	spriteBatch->draw(gameplay::Rectangle(0, 0, getWidth(), getHeight()),
+		gameplay::Rectangle(0, 0, getWidth(), getHeight()), Vector4::one());
     spriteBatch->finish();
+
+
+	g_SoccerPitch->Render();
 
     // Visit all the nodes in the scene for drawing
     _scene->visit(this, &SoccerGame::drawScene);
