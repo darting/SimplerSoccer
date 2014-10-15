@@ -5,7 +5,7 @@
 #include "2D/Transformations.h"
 #include "2D/Geometry.h"
 #include "SoccerTeam.h"
-#include "Debug/DebugConsole.h"
+//#include "Debug/DebugConsole.h"
 #include "Game/EntityManager.h"
 #include "ParamLoader.h"
 #include "PlayerBase.h"

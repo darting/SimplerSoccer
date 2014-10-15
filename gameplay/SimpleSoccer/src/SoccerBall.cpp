@@ -1,7 +1,7 @@
 #include "SoccerBall.h"
 #include "2D/geometry.h"
-#include "Debug/DebugConsole.h"
-#include "misc/Cgdi.h"
+//#include "Debug/DebugConsole.h"
+//#include "misc/Cgdi.h"
 #include "ParamLoader.h"
 #include "2D/Wall2D.h"
 
@@ -142,9 +142,9 @@ Vector2D SoccerBall::FuturePosition(double time)const
 //------------------------------------------------------------------------
 void SoccerBall::Render()
 {
-  gdi->BlackBrush();
+//  gdi->BlackBrush();
 
-  gdi->Circle(m_vPosition, m_dBoundingRadius);
+//  gdi->Circle(m_vPosition, m_dBoundingRadius);
 
   /*
   gdi->GreenBrush();

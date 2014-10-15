@@ -10,7 +10,7 @@
 //
 //------------------------------------------------------------------------
 #include <math.h>
-#include <windows.h>
+//#include <windows.h>
 #include <iosfwd>
 #include <limits>
 #include "misc/utils.h"
@@ -297,6 +297,19 @@ inline double Vec2DLengthSq(const Vector2D& v)
 {
   return (v.x*v.x + v.y*v.y);
 }
+
+// TODO fixme
+class POINTS {
+public:
+    int x;
+    int y;
+};
+
+class POINT {
+public:
+    int x;
+    int y;
+};
 
 
 inline Vector2D POINTStoVector(const POINTS& p)

@@ -190,7 +190,7 @@ Vector2D SteeringBehaviors::Arrive(Vector2D    target,
     double speed =  dist / ((double)deceleration * DecelerationTweaker);                    
 
     //make sure the velocity does not exceed the max
-    speed = min(speed, m_pPlayer->MaxSpeed());
+    speed = fmin(speed, m_pPlayer->MaxSpeed());
 
     //from here proceed just like Seek except we don't need to normalize 
     //the ToTarget vector because we have already gone to the trouble
@@ -303,9 +303,9 @@ Vector2D SteeringBehaviors::Interpose(const SoccerBall* ball,
 void SteeringBehaviors::RenderAids( )
 { 
   //render the steering force
-  gdi->RedPen();
+//  gdi->RedPen();
 
-  gdi->Line(m_pPlayer->Pos(), m_pPlayer->Pos() + m_vSteeringForce * 20);
+//  gdi->Line(m_pPlayer->Pos(), m_pPlayer->Pos() + m_vSteeringForce * 20);
 
 
   

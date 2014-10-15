@@ -585,11 +585,13 @@ inline bool GetLineSegmentCircleClosestIntersectionPoint(Vector2D A,
                                                          Vector2D& IntersectionPoint)
 {
   Vector2D toBNorm = Vec2DNormalize(B-A);
+    
+  auto prep = Vector2D(-toBNorm.y, toBNorm.x);
 
   //move the circle into the local space defined by the vector B-A with origin
   //at A
-  Vector2D LocalPos = PointToLocalSpace(pos, toBNorm, toBNorm.Perp(), A);
-
+  Vector2D LocalPos = PointToLocalSpace(pos, toBNorm, prep, A);
+    
   bool ipFound = false;
 
   //if the local position + the radius is negative then the circle lays behind

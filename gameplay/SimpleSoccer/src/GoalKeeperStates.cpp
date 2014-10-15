@@ -1,5 +1,5 @@
 #include "GoalKeeperStates.h"
-#include "Debug/DebugConsole.h"
+//#include "Debug/DebugConsole.h"
 #include "SoccerPitch.h"
 #include "PlayerBase.h"
 #include "GoalKeeper.h"

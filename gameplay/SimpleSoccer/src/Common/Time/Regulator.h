@@ -12,8 +12,8 @@
 //  Author: Mat Buckland 2003 (fup@ai-junkie.com)
 //
 //------------------------------------------------------------------------
-#pragma comment(lib,"winmm.lib") //if you don't use MSVC make sure this library is included in your project
-#include "mmsystem.h" 
+//#pragma comment(lib,"winmm.lib") //if you don't use MSVC make sure this library is included in your project
+//#include "mmsystem.h"
 
 #include "misc/utils.h"
 

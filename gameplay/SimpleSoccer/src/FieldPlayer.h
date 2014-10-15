@@ -22,7 +22,7 @@
 #include "FSM/StateMachine.h"
 #include "PlayerBase.h"
 #include "FSM/StateMachine.h"
-#include "time/Regulator.h"
+//#include "time/Regulator.h"
 
 class CSteeringBehavior;
 class SoccerTeam;

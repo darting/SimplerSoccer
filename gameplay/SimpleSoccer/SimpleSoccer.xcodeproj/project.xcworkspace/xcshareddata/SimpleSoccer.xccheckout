@@ -22,7 +22,7 @@
 		<key>4D2F6C8311FB141F9D5DC2542C01699222CA4DAF</key>
 		<string>../../../..</string>
 		<key>E67F01F9F968AE77A86D5227840E5CC9AFFD2705</key>
-		<string>../../../../../../blackberry/GamePlay</string>
+		<string>../../../../../blackberry/GamePlay</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>https://github.com/games/SimplerSoccer.git</string>

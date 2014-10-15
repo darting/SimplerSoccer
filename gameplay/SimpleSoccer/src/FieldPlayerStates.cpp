@@ -1,5 +1,5 @@
 #include "FieldPlayerStates.h"
-#include "Debug/DebugConsole.h"
+//#include "Debug/DebugConsole.h"
 #include "SoccerPitch.h"
 #include "FieldPlayer.h"
 #include "SteeringBehaviors.h"

@@ -8,6 +8,7 @@
 //
 //  Desc:   various useful functions that operate on or with streams
 //-----------------------------------------------------------------------------
+#include <stdexcept>
 #include <sstream>
 #include <string>
 #include <iomanip>
@@ -44,17 +45,18 @@ inline std::string btos(bool b)
 template <typename T>
 inline T GetValueFromStream(std::ifstream& stream)
 {
-  T val;
-
-  stream >> val;
-
-  //make sure it was the correct type
-  if (!stream)
-  {
-    throw std::runtime_error("Attempting to retrieve wrong type from stream");
-  }
-
-  return val;
+    throw std::runtime_error("not implemention");
+//  T val;
+//
+//  stream >> val;
+//
+//  //make sure it was the correct type
+//  if (!stream)
+//  {
+//    throw std::runtime_error("Attempting to retrieve wrong type from stream");
+//  }
+//
+//  return val;
 }
 
 //--------------------------- WriteBitsToStream ------------------------------------
