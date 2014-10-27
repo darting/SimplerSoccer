@@ -25,18 +25,15 @@ using namespace minko;
 using namespace minko::component;
 using namespace minko::math;
 
-std::string SCENE_FILENAME = "NewScene.scene";
 
 int main(int argc, char** argv)
 {
     auto canvas = Canvas::create("Minko Application", 800, 600);
-
     auto sceneManager = SceneManager::create(canvas->context());
     
-    sceneManager->assets()->loader()->options()->registerParser<minko::file::SceneParser>("scene");
+    
     sceneManager->assets()->loader()->queue("effect/Phong.effect");
-    sceneManager->assets()->loader()->queue(SCENE_FILENAME);
-
+    
     sceneManager->assets()->loader()
         ->queue("effect/Basic.effect");
 
@@ -46,7 +43,7 @@ int main(int argc, char** argv)
     auto camera = scene::Node::create("camera")
         ->addComponent(Renderer::create(0x7f7f7fff))
         ->addComponent(Transform::create(
-            Matrix4x4::create()->lookAt(Vector3::zero(), Vector3::create(0.f, 0.f, 3.f))
+            Matrix4x4::create()->lookAt(Vector3::zero(), Vector3::create(0.f, 2.f, 5.f))
         ))
         ->addComponent(PerspectiveCamera::create(canvas->aspectRatio()));
 
@@ -54,6 +51,9 @@ int main(int argc, char** argv)
 
     auto mesh = scene::Node::create("mesh")
         ->addComponent(Transform::create());
+    mesh->component<Transform>()->matrix()->translation(0.f, 1.f, 0.f);
+    
+    auto floor = scene::Node::create("floor")->addComponent(Transform::create());
 
     auto _ = sceneManager->assets()->loader()->complete()->connect([=](file::Loader::Ptr loader)
     {
@@ -63,8 +63,13 @@ int main(int argc, char** argv)
                 ->set("diffuseColor", Vector4::create(1.f, 1.f, 1.f, 1.f)),
             sceneManager->assets()->effect("effect/Phong.effect")
         ));
-
         root->addChild(mesh);
+        
+        floor->addComponent(Surface::create(geometry::QuadGeometry::create(sceneManager->assets()->context(), 1.f, 1.f, 5.f, 5.f),
+                            material::Material::create()->set("diffuseColor", Vector4::create(1.f, 0.f, 0.f, 1.f)),
+                            sceneManager->assets()->effect("effect/Phong.effect")));
+        floor->component<Transform>()->matrix()->appendRotationX(-3.14 / 2);
+        root->addChild(floor);
 
         auto light = scene::Node::create("light")
             ->addComponent(AmbientLight::create())
@@ -74,16 +79,32 @@ int main(int argc, char** argv)
             ));
 
         root->addChild(light);
+        
     });
 
     auto resized = canvas->resized()->connect([&](AbstractCanvas::Ptr canvas, uint w, uint h)
     {
         camera->component<PerspectiveCamera>()->aspectRatio(float(w) / float(h));
     });
+    
+    Signal<input::Mouse::Ptr, int, int>::Slot mouseMove;
+    auto cameraRotation = 0.0f;
+    auto mouseDown = canvas->mouse()->leftButtonDown()->connect([&](input::Mouse::Ptr mouse){
+        mouseMove = canvas->mouse()->move()->connect([&](input::Mouse::Ptr mouse, int dx, int dy){
+            cameraRotation = (float)-dx * 0.9;
+        });
+    });
+    auto mouseUp = canvas->mouse()->leftButtonUp()->connect([&](input::Mouse::Ptr mouse){
+        mouseMove = nullptr;
+    });
 
     auto enterFrame = canvas->enterFrame()->connect([&](Canvas::Ptr canvas, float time, float deltaTime)
     {
         mesh->component<Transform>()->matrix()->appendRotationY(0.001f * deltaTime);
+        
+//        camera->component<Transform>()->matrix()->appendRotationY(cameraRotation * deltaTime);
+//        cameraRotation *= 0.99f;
+        
         sceneManager->nextFrame(time, deltaTime);
     });
 
@@ -92,3 +113,11 @@ int main(int argc, char** argv)
 
     return 0;
 }
+
+
+
+
+
+
+
+

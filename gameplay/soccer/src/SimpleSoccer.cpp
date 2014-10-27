@@ -12,22 +12,12 @@ void SimpleSoccer::initialize()
 {
     // Load game scene from file
     _scene = Scene::load("res/demo.scene");
-
-	Bundle* bundle = Bundle::create("res/test.gpb");
-	Node* monkey = bundle->loadNode("abc");
-	SAFE_RELEASE(bundle);
-
-	_scene->addNode(monkey);
+    
 
     // Get the box model and initialize its material parameter values and bindings
     Node* boxNode = _scene->findNode("box");
     Model* boxModel = boxNode->getModel();
     Material* boxMaterial = boxModel->getMaterial();
-
-	Material* m = Material::create("res/test.material");
-
-
-	monkey->getModel()->setMaterial(m);
 
     // Set the aspect ratio for the scene's camera to match the current resolution
     _scene->getActiveCamera()->setAspectRatio(getAspectRatio());
