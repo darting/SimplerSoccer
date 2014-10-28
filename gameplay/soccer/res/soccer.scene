@@ -1,0 +1,21 @@
+scene
+{
+    path = res/soccer.gpb
+
+    ambientColor = 1, 1, 1
+
+    node soccer_field
+    {
+        material = res/soccer.material#field
+    }
+
+    node ground
+    {
+        material = res/soccer.material#ground
+    }
+
+    physics
+    {
+        gravity = 0.0, -9.8, 0.0
+    }
+}

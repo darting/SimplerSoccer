@@ -1,0 +1,14 @@
+form basicControls
+{
+    theme = res/ui/default.theme
+    layout = LAYOUT_ABSOLUTE
+	size = 100, 60
+    batchingEnabled = true
+
+	label fpsLabel
+	{
+		position = 10, 10
+		text = FPS
+        fontSize = 14
+	}
+}

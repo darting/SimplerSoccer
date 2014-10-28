@@ -73,6 +73,8 @@
     <None Include="res\shaders\textured.vert">
       <Filter>res\shaders</Filter>
     </None>
+    <None Include="res\soccer.scene" />
+    <None Include="res\ui.form" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\SimpleSoccer.h">
@@ -83,5 +85,8 @@
     <ClCompile Include="src\SimpleSoccer.cpp">
       <Filter>src</Filter>
     </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="res\soccer_field2.png" />
   </ItemGroup>
 </Project>

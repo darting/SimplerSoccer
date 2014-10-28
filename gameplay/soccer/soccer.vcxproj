@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="DebugMem|x64">
@@ -189,12 +189,17 @@ xcopy ..\..\..\..\blackberry\GamePlay\gameplay\res\ui res\ui\* /s /y /d</Command
     <None Include="res\shaders\terrain.vert" />
     <None Include="res\shaders\textured.frag" />
     <None Include="res\shaders\textured.vert" />
+    <None Include="res\soccer.scene" />
+    <None Include="res\ui.form" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\SimpleSoccer.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\SimpleSoccer.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="res\soccer_field2.png" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
