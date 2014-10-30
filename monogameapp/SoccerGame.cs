@@ -32,7 +32,7 @@ namespace monogameapp {
 			// TODO: Add your initialization logic here
 			var viewport = graphics.GraphicsDevice.Viewport;
 
-			soccerPitch = new SoccerPitch(new Rectangle(10, 10, viewport.Width - 20, viewport.Height - 20));
+            soccerPitch = new SoccerPitch(viewport.Width, viewport.Height);
 
 			base.Initialize();
 		}

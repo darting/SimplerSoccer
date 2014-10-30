@@ -8,7 +8,7 @@ namespace SimplerSoccer {
 		private const int NumRegionsHorizontal = 6;
 		private const int NumRegionsVertical = 3;
 
-		public List<Region> regions = new List<Region>();
+        public Region[] regions;
 		public SoccerTeam redTeam;
 		public SoccerTeam blueTeam;
 		public Goal redGoal;
@@ -22,6 +22,7 @@ namespace SimplerSoccer {
 			ClientY = cy;
 			PlayingArea = new Region(20, 20, cx - 20f, cy - 20f);
 
+            regions = new Region[NumRegionsHorizontal * NumRegionsVertical];
 			CreateRegions(PlayingArea.Width / (float)NumRegionsHorizontal, PlayingArea.Height / (float)NumRegionsVertical);
 
 			redGoal = new Goal(new Vector2(PlayingArea.Left, (cy - Configuration.GoalWidth) / 2f), 
@@ -32,10 +33,10 @@ namespace SimplerSoccer {
 				new Vector2(PlayingArea.Right, cy - (cy - Configuration.GoalWidth) / 2f),
 				new Vector2(-1, 0));
 
-			ball = new SoccerBall(new Vector2(ClientX / 2.0, ClientY / 2.0), Configuration.BallSize, Configuration.BallMass, Walls);
+			ball = new SoccerBall(new Vector2(ClientX / 2.0f, ClientY / 2.0f), Configuration.BallSize, Configuration.BallMass, Walls);
 
-			redTeam = new SoccerTeam(redGoal, blueGoal, this, SoccerTeam.RED);
-			blueTeam = new SoccerTeam(blueGoal, redGoal, this, SoccerTeam.BLUE);
+			redTeam = new SoccerTeam(redGoal, blueGoal, this, SoccerTeam.SoccerColor.Red);
+			blueTeam = new SoccerTeam(blueGoal, redGoal, this, SoccerTeam.SoccerColor.Blue);
 
 			redTeam.Opponents = blueTeam;
 			blueTeam.Opponents = redTeam;
@@ -45,6 +46,8 @@ namespace SimplerSoccer {
 			var topRight = new Vector2(PlayingArea.Right, PlayingArea.Top);
 			var bottomRight = new Vector2(PlayingArea.Right, PlayingArea.Bottom);
 			var bottomLeft = new Vector2(PlayingArea.Left, PlayingArea.Bottom);
+
+            Walls = new List<Wall2D>();
 			Walls.Add(new Wall2D(bottomLeft, redGoal.RightPost));
 			Walls.Add(new Wall2D(redGoal.LeftPost, topLeft));
 			Walls.Add(new Wall2D(topLeft, topRight));
@@ -57,22 +60,22 @@ namespace SimplerSoccer {
 			if (Paused)
 				return;
 
-			ball.Update();
-			redTeam.Update();
-			blueTeam.Update();
+            ball.Update();
+            redTeam.Update();
+            blueTeam.Update();
 
 			if (blueGoal.Scored(ball) || redGoal.Scored(ball)) {
 				GameOn = false;
 
-				ball.PlaceAtPosition(new Vector2(ClientX / 2.0, ClientY / 2.0));
+				ball.PlaceAtPosition(new Vector2(ClientX / 2.0f, ClientY / 2.0f));
 
-				redTeam.FSM.ChangeState(new PrepareForKickOff());
-				blueTeam.FSM.ChangeState(new PrepareForKickOff());
+				//redTeam.FSM.ChangeState(new PrepareForKickOff());
+				//blueTeam.FSM.ChangeState(new PrepareForKickOff());
 			}
 		}
 
-		public void CreateRegions(double width, double height) {
-			var idx = regions.Count - 1;
+        public void CreateRegions(float width, float height) {
+			var idx = regions.Length - 1;
 			for (var col = 0; col < NumRegionsHorizontal; col++) {
 				for (var row = 0; row < NumRegionsVertical; row++) {
 					regions[idx--] = new Region(PlayingArea.Left + col * width,
@@ -92,7 +95,7 @@ namespace SimplerSoccer {
 		}
 
 		public Region GetRegionFromIndex(int idx) {
-			if (regions.Count <= idx)
+			if (regions.Length <= idx)
 				throw new IndexOutOfRangeException();
 			return regions[idx];
 		}
