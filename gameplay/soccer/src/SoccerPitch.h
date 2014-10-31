@@ -13,7 +13,7 @@
 //  Author: Mat Buckland 2003 (fup@ai-junkie.com)
 //
 //------------------------------------------------------------------------
-#include <windows.h>
+//#include <windows.h>
 #include <vector>
 #include <cassert>
 
@@ -75,7 +75,7 @@ public:
 
 	~SoccerPitch();
 
-	void  Update();
+	void  Update(float elapsedTime);
 
 	bool  Render();
 

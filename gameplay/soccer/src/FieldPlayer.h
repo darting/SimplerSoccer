@@ -59,7 +59,7 @@ public:
   ~FieldPlayer();
 
   //call this to update the player's position and orientation
-  void        Update();   
+  void        Update(float elapsedTime) override;
 
   void        Render();
 
@@ -67,7 +67,9 @@ public:
 
   StateMachine<FieldPlayer>* GetFSM()const{return m_pStateMachine;}
 
-  bool        isReadyForNextKick()const{return m_pKickLimiter->isReady();}
+  bool        isReadyForNextKick() const {
+      return m_pKickLimiter->isReady();
+  }
 
          
 };

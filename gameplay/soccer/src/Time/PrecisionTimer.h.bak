@@ -13,7 +13,7 @@
 //        support, but hey, I have shares in AMD and Intel... Go upgrade ;o)
 //
 //-----------------------------------------------------------------------
-#include <windows.h>
+//#include <windows.h>
 #include <cassert>
 
 

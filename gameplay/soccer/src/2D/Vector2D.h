@@ -10,7 +10,7 @@
 //
 //------------------------------------------------------------------------
 #include <math.h>
-#include <windows.h>
+//#include <windows.h>
 #include <iosfwd>
 #include <limits>
 #include "misc/utils.h"
@@ -299,33 +299,33 @@ inline double Vec2DLengthSq(const Vector2D& v)
 }
 
 
-inline Vector2D POINTStoVector(const POINTS& p)
-{
-  return Vector2D(p.x, p.y);
-}
-
-inline Vector2D POINTtoVector(const POINT& p)
-{
-  return Vector2D((double)p.x, (double)p.y);
-}
-
-inline POINTS VectorToPOINTS(const Vector2D& v)
-{
-  POINTS p;
-  p.x = (short)v.x;
-  p.y = (short)v.y;
-
-  return p;
-}
-
-inline POINT VectorToPOINT(const Vector2D& v)
-{
-  POINT p;
-  p.x = (long)v.x;
-  p.y = (long)v.y;
-
-  return p;
-}
+//inline Vector2D POINTStoVector(const POINTS& p)
+//{
+//  return Vector2D(p.x, p.y);
+//}
+//
+//inline Vector2D POINTtoVector(const POINT& p)
+//{
+//  return Vector2D((double)p.x, (double)p.y);
+//}
+//
+//inline POINTS VectorToPOINTS(const Vector2D& v)
+//{
+//  POINTS p;
+//  p.x = (short)v.x;
+//  p.y = (short)v.y;
+//
+//  return p;
+//}
+//
+//inline POINT VectorToPOINT(const Vector2D& v)
+//{
+//  POINT p;
+//  p.x = (long)v.x;
+//  p.y = (long)v.y;
+//
+//  return p;
+//}
 
 
 

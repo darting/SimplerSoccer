@@ -190,7 +190,7 @@ Vector2D SteeringBehaviors::Arrive(Vector2D    target,
     double speed =  dist / ((double)deceleration * DecelerationTweaker);                    
 
     //make sure the velocity does not exceed the max
-    speed = min(speed, m_pPlayer->MaxSpeed());
+    speed = fmin(speed, m_pPlayer->MaxSpeed());
 
     //from here proceed just like Seek except we don't need to normalize 
     //the ToTarget vector because we have already gone to the trouble

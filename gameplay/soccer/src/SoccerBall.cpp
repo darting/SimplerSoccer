@@ -48,7 +48,7 @@ void SoccerBall::Kick(Vector2D direction, double force)
 //  updates the ball physics, tests for any collisions and adjusts
 //  the ball's velocity accordingly
 //------------------------------------------------------------------------
-void SoccerBall::Update()
+void SoccerBall::Update(float elapsedTime)
 {
   //keep a record of the old position so the goal::scored method
   //can utilize it for goal testing

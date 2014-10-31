@@ -59,7 +59,7 @@ public:
   {}
   
   //implement base class Update
-  void      Update();
+  void      Update(float elapsedTime);
 
   //implement base class Render
   void      Render();

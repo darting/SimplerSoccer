@@ -96,9 +96,10 @@ Vector2D SupportSpotCalculator::DetermineBestSupportingPosition()
     }
       
    
-    //Test 2. Determine if a goal can be scored from this position.  
+    //Test 2. Determine if a goal can be scored from this position.
+      Vector2D v;
     if( m_pTeam->CanShoot(curSpot->m_vPos,            
-                          Prm.MaxShootingForce))
+                          Prm.MaxShootingForce, v))
     {
       curSpot->m_dScore += Prm.Spot_CanScoreFromPositionScore;
     }   
@@ -155,6 +156,10 @@ Vector2D SupportSpotCalculator::GetBestSupportingSpot()
   { 
     return DetermineBestSupportingPosition();
   }
+}
+
+void SupportSpotCalculator::Update(float elapsedTime){
+    m_pRegulator->Update(elapsedTime);
 }
 
 //----------------------------------- Render ----------------------------------

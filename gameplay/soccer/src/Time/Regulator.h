@@ -12,10 +12,10 @@
 //  Author: Mat Buckland 2003 (fup@ai-junkie.com)
 //
 //------------------------------------------------------------------------
-#pragma comment(lib,"winmm.lib") //if you don't use MSVC make sure this library is included in your project
-#include "mmsystem.h" 
-
-#include "misc/utils.h"
+//#pragma comment(lib,"winmm.lib") //if you don't use MSVC make sure this library is included in your project
+//#include "mmsystem.h" 
+//
+//#include "misc/utils.h"
 
 
 
@@ -28,7 +28,9 @@ private:
   double m_dUpdatePeriod;
 
   //the next time the regulator allows code flow
-  DWORD m_dwNextUpdateTime;
+  double m_dwNextUpdateTime;
+    
+    double _currentTime;
 
 
 public:
@@ -36,7 +38,7 @@ public:
   
   Regulator(double NumUpdatesPerSecondRqd)
   {
-    m_dwNextUpdateTime = (DWORD)(timeGetTime()+RandFloat()*1000);
+      m_dwNextUpdateTime = 0;// (DWORD)(timeGetTime()+RandFloat()*1000);
 
     if (NumUpdatesPerSecondRqd > 0)
     {
@@ -53,6 +55,11 @@ public:
       m_dUpdatePeriod = -1;
     }
   }
+    
+    void Update(float elapsedTime) {
+        m_dUpdatePeriod = elapsedTime;
+        _currentTime = m_dwNextUpdateTime + elapsedTime;
+    }
 
 
   //returns true if the current time exceeds m_dwNextUpdateTime
@@ -66,16 +73,14 @@ public:
     //never allow the code to flow
     if (m_dUpdatePeriod < 0) return false;
 
-    DWORD CurrentTime = timeGetTime();
-
     //the number of milliseconds the update period can vary per required
     //update-step. This is here to make sure any multiple clients of this class
     //have their updates spread evenly
     static const double UpdatePeriodVariator = 10.0;
 
-    if (CurrentTime >= m_dwNextUpdateTime)
+    if (_currentTime >= m_dwNextUpdateTime)
     {
-      m_dwNextUpdateTime = (DWORD)(CurrentTime + m_dUpdatePeriod + RandInRange(-UpdatePeriodVariator, UpdatePeriodVariator));
+        m_dwNextUpdateTime = _currentTime + m_dUpdatePeriod;//  (DWORD)(CurrentTime + m_dUpdatePeriod + RandInRange(-UpdatePeriodVariator, UpdatePeriodVariator));
 
       return true;
     }

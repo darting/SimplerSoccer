@@ -49,7 +49,7 @@ GoalKeeper::GoalKeeper(SoccerTeam*        home_team,
 
 //-------------------------- Update --------------------------------------
 
-void GoalKeeper::Update()
+void GoalKeeper::Update(float elapsedTime)
 { 
   //run the logic for the current state
   m_pStateMachine->Update();

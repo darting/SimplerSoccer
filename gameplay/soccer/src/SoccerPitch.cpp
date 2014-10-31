@@ -99,18 +99,18 @@ SoccerPitch::~SoccerPitch()
 //  this demo works on a fixed frame rate (60 by default) so we don't need
 //  to pass a time_elapsed as a parameter to the game entities
 //------------------------------------------------------------------------
-void SoccerPitch::Update()
+void SoccerPitch::Update(float elapsedTime)
 {
   if (m_bPaused) return;
 
   static int tick = 0;
 
   //update the balls
-  m_pBall->Update();
+  m_pBall->Update(elapsedTime);
 
   //update the teams
-  m_pRedTeam->Update();
-  m_pBlueTeam->Update();
+  m_pRedTeam->Update(elapsedTime);
+  m_pBlueTeam->Update(elapsedTime);
 
   //if a goal has been detected reset the pitch ready for kickoff
   if (m_pBlueGoal->Scored(m_pBall) || m_pRedGoal->Scored(m_pBall))

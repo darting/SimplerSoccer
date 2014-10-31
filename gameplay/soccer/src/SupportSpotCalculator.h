@@ -67,6 +67,8 @@ public:
                         SoccerTeam* team);
 
   ~SupportSpotCalculator();
+    
+    void Update(float elapsedTime);
 
   //draws the spots to the screen as a hollow circles. The higher the 
   //score, the bigger the circle. The best supporting spot is drawn in

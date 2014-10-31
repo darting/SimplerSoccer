@@ -71,8 +71,10 @@ FieldPlayer::FieldPlayer(SoccerTeam* home_team,
 //
 //  
 //------------------------------------------------------------------------
-void FieldPlayer::Update()
-{ 
+void FieldPlayer::Update(float elapsedTime)
+{
+    m_pKickLimiter->Update(elapsedTime);
+    
   //run the logic for the current state
   m_pStateMachine->Update();
 

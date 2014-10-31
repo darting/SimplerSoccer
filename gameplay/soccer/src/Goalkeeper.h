@@ -46,7 +46,7 @@ public:
    ~GoalKeeper(){delete m_pStateMachine;}
 
    //these must be implemented
-   void        Update();
+   void        Update(float elapsedTime) override;
    void        Render();
    bool        HandleMessage(const Telegram& msg);
 

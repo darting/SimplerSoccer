@@ -79,7 +79,8 @@ public:
              player_role    role);
 
   virtual ~PlayerBase();
-
+    
+  virtual void Update(float elapsedTime){}
 
   //returns true if there is an opponent within this player's 
   //comfort zone
@@ -151,6 +152,8 @@ public:
   const Region* const      HomeRegion()const;
   void                     SetHomeRegion(int NewRegion){m_iHomeRegion = NewRegion;}
   SoccerTeam*const         Team()const{return m_pTeam;}
+    
+
   
 };
 

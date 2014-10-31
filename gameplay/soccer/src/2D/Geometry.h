@@ -10,9 +10,10 @@
 //
 //------------------------------------------------------------------------
 #include "misc/utils.h"
-#include "2d/Vector2D.h"
-#include "2d/C2DMatrix.h"
+#include "Vector2D.h"
+#include "C2DMatrix.h"
 #include "Transformations.h"
+
 
 #include <math.h>
 #include <vector>
@@ -31,7 +32,7 @@ inline double DistanceToRayPlaneIntersection(Vector2D RayOrigin,
   double d     = - PlaneNormal.Dot(PlanePoint);
   double numer = PlaneNormal.Dot(RayOrigin) + d;
   double denom = PlaneNormal.Dot(RayHeading);
-  
+
   // normal is parallel to vector
   if ((denom < 0.000001) && (denom > -0.000001))
   {
@@ -584,46 +585,48 @@ inline bool GetLineSegmentCircleClosestIntersectionPoint(Vector2D A,
                                                          double    radius,
                                                          Vector2D& IntersectionPoint)
 {
-  Vector2D toBNorm = Vec2DNormalize(B-A);
-
-  //move the circle into the local space defined by the vector B-A with origin
-  //at A
-  Vector2D LocalPos = PointToLocalSpace(pos, toBNorm, toBNorm.Perp(), A);
-
-  bool ipFound = false;
-
-  //if the local position + the radius is negative then the circle lays behind
-  //point A so there is no intersection possible. If the local x pos minus the 
-  //radius is greater than length A-B then the circle cannot intersect the 
-  //line segment
-  if ( (LocalPos.x+radius >= 0) &&
-     ( (LocalPos.x-radius)*(LocalPos.x-radius) <= Vec2DDistanceSq(B, A)) )
-  {
-     //if the distance from the x axis to the object's position is less
-     //than its radius then there is a potential intersection.
-     if (fabs(LocalPos.y) < radius)
-     {
-        //now to do a line/circle intersection test. The center of the 
-        //circle is represented by A, B. The intersection points are 
-        //given by the formulae x = A +/-sqrt(r^2-B^2), y=0. We only 
-        //need to look at the smallest positive value of x.
-        double a = LocalPos.x;
-        double b = LocalPos.y;       
-
-        double ip = a - sqrt(radius*radius - b*b);
-
-        if (ip <= 0)
-        {
-          ip = a + sqrt(radius*radius - b*b);
-        }
-
-        ipFound = true;
-
-        IntersectionPoint = A+ toBNorm*ip;
-     }
-   }
-
-  return ipFound;
+//  Vector2D toBNorm = Vec2DNormalize(B-A);
+//
+//  //move the circle into the local space defined by the vector B-A with origin
+//  //at A
+//  Vector2D LocalPos = PointToLocalSpace(pos, toBNorm, toBNorm.Perp(), A);
+//
+//  bool ipFound = false;
+//
+//  //if the local position + the radius is negative then the circle lays behind
+//  //point A so there is no intersection possible. If the local x pos minus the 
+//  //radius is greater than length A-B then the circle cannot intersect the 
+//  //line segment
+//  if ( (LocalPos.x+radius >= 0) &&
+//     ( (LocalPos.x-radius)*(LocalPos.x-radius) <= Vec2DDistanceSq(B, A)) )
+//  {
+//     //if the distance from the x axis to the object's position is less
+//     //than its radius then there is a potential intersection.
+//     if (fabs(LocalPos.y) < radius)
+//     {
+//        //now to do a line/circle intersection test. The center of the 
+//        //circle is represented by A, B. The intersection points are 
+//        //given by the formulae x = A +/-sqrt(r^2-B^2), y=0. We only 
+//        //need to look at the smallest positive value of x.
+//        double a = LocalPos.x;
+//        double b = LocalPos.y;       
+//
+//        double ip = a - sqrt(radius*radius - b*b);
+//
+//        if (ip <= 0)
+//        {
+//          ip = a + sqrt(radius*radius - b*b);
+//        }
+//
+//        ipFound = true;
+//
+//        IntersectionPoint = A+ toBNorm*ip;
+//     }
+//   }
+//
+//  return ipFound;
+    throw false;
+    return false;
 }
 
 #endif

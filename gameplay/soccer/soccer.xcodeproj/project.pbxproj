@@ -7,6 +7,27 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1DA065461A03C97F001BF331 /* Vector2D.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1DA065011A03C97F001BF331 /* Vector2D.cpp */; };
+		1DA065471A03C97F001BF331 /* FieldPlayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1DA065061A03C97F001BF331 /* FieldPlayer.cpp */; };
+		1DA065481A03C97F001BF331 /* FieldPlayerStates.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1DA065081A03C97F001BF331 /* FieldPlayerStates.cpp */; };
+		1DA065491A03C97F001BF331 /* BaseGameEntity.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1DA0650E1A03C97F001BF331 /* BaseGameEntity.cpp */; };
+		1DA0654A1A03C97F001BF331 /* EntityManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1DA065111A03C97F001BF331 /* EntityManager.cpp */; };
+		1DA0654B1A03C97F001BF331 /* Goal.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1DA065151A03C97F001BF331 /* Goal.cpp */; };
+		1DA0654C1A03C97F001BF331 /* Goalkeeper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1DA065171A03C97F001BF331 /* Goalkeeper.cpp */; };
+		1DA0654D1A03C97F001BF331 /* GoalKeeperStates.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1DA065191A03C97F001BF331 /* GoalKeeperStates.cpp */; };
+		1DA0654E1A03C97F001BF331 /* Logger.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1DA0651B1A03C97F001BF331 /* Logger.cpp */; };
+		1DA0654F1A03C97F001BF331 /* MessageDispatcher.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1DA0651E1A03C97F001BF331 /* MessageDispatcher.cpp */; };
+		1DA065501A03C97F001BF331 /* FrameCounter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1DA065241A03C97F001BF331 /* FrameCounter.cpp */; };
+		1DA065511A03C97F001BF331 /* iniFileLoaderBase.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1DA065261A03C97F001BF331 /* iniFileLoaderBase.cpp */; };
+		1DA065521A03C97F001BF331 /* ParamLoader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1DA0652D1A03C97F001BF331 /* ParamLoader.cpp */; };
+		1DA065531A03C97F001BF331 /* PlayerBase.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1DA0652F1A03C97F001BF331 /* PlayerBase.cpp */; };
+		1DA065541A03C97F001BF331 /* SoccerBall.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1DA065321A03C97F001BF331 /* SoccerBall.cpp */; };
+		1DA065551A03C97F001BF331 /* SoccerMessages.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1DA065341A03C97F001BF331 /* SoccerMessages.cpp */; };
+		1DA065561A03C97F001BF331 /* SoccerPitch.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1DA065361A03C97F001BF331 /* SoccerPitch.cpp */; };
+		1DA065571A03C97F001BF331 /* SoccerTeam.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1DA065381A03C97F001BF331 /* SoccerTeam.cpp */; };
+		1DA065581A03C97F001BF331 /* SteeringBehaviors.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1DA0653A1A03C97F001BF331 /* SteeringBehaviors.cpp */; };
+		1DA065591A03C97F001BF331 /* SupportSpotCalculator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1DA0653C1A03C97F001BF331 /* SupportSpotCalculator.cpp */; };
+		1DA0655A1A03C97F001BF331 /* TeamStates.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1DA0653E1A03C97F001BF331 /* TeamStates.cpp */; };
 		42049B5816ADBB61005DD1F9 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42049B5216ADBB61005DD1F9 /* CoreMotion.framework */; };
 		42049B5916ADBB61005DD1F9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42049B5316ADBB61005DD1F9 /* Foundation.framework */; };
 		42049B5A16ADBB61005DD1F9 /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42049B5416ADBB61005DD1F9 /* OpenAL.framework */; };
@@ -73,6 +94,70 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1DA064FD1A03C97F001BF331 /* C2DMatrix.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = C2DMatrix.h; sourceTree = "<group>"; };
+		1DA064FE1A03C97F001BF331 /* Geometry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Geometry.h; sourceTree = "<group>"; };
+		1DA064FF1A03C97F001BF331 /* InvertedAABBox2D.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InvertedAABBox2D.h; sourceTree = "<group>"; };
+		1DA065001A03C97F001BF331 /* Transformations.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Transformations.h; sourceTree = "<group>"; };
+		1DA065011A03C97F001BF331 /* Vector2D.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Vector2D.cpp; sourceTree = "<group>"; };
+		1DA065021A03C97F001BF331 /* Vector2D.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Vector2D.h; sourceTree = "<group>"; };
+		1DA065031A03C97F001BF331 /* Wall2D.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Wall2D.h; sourceTree = "<group>"; };
+		1DA065041A03C97F001BF331 /* WallIntersectionTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WallIntersectionTests.h; sourceTree = "<group>"; };
+		1DA065051A03C97F001BF331 /* constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = constants.h; sourceTree = "<group>"; };
+		1DA065061A03C97F001BF331 /* FieldPlayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FieldPlayer.cpp; sourceTree = "<group>"; };
+		1DA065071A03C97F001BF331 /* FieldPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FieldPlayer.h; sourceTree = "<group>"; };
+		1DA065081A03C97F001BF331 /* FieldPlayerStates.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FieldPlayerStates.cpp; sourceTree = "<group>"; };
+		1DA065091A03C97F001BF331 /* FieldPlayerStates.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FieldPlayerStates.h; sourceTree = "<group>"; };
+		1DA0650B1A03C97F001BF331 /* State.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = State.h; sourceTree = "<group>"; };
+		1DA0650C1A03C97F001BF331 /* StateMachine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StateMachine.h; sourceTree = "<group>"; };
+		1DA0650E1A03C97F001BF331 /* BaseGameEntity.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BaseGameEntity.cpp; sourceTree = "<group>"; };
+		1DA0650F1A03C97F001BF331 /* BaseGameEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseGameEntity.h; sourceTree = "<group>"; };
+		1DA065101A03C97F001BF331 /* EntityFunctionTemplates.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EntityFunctionTemplates.h; sourceTree = "<group>"; };
+		1DA065111A03C97F001BF331 /* EntityManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = EntityManager.cpp; sourceTree = "<group>"; };
+		1DA065121A03C97F001BF331 /* EntityManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EntityManager.h; sourceTree = "<group>"; };
+		1DA065131A03C97F001BF331 /* MovingEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MovingEntity.h; sourceTree = "<group>"; };
+		1DA065141A03C97F001BF331 /* Region.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Region.h; sourceTree = "<group>"; };
+		1DA065151A03C97F001BF331 /* Goal.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Goal.cpp; sourceTree = "<group>"; };
+		1DA065161A03C97F001BF331 /* Goal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Goal.h; sourceTree = "<group>"; };
+		1DA065171A03C97F001BF331 /* Goalkeeper.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Goalkeeper.cpp; sourceTree = "<group>"; };
+		1DA065181A03C97F001BF331 /* Goalkeeper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Goalkeeper.h; sourceTree = "<group>"; };
+		1DA065191A03C97F001BF331 /* GoalKeeperStates.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GoalKeeperStates.cpp; sourceTree = "<group>"; };
+		1DA0651A1A03C97F001BF331 /* GoalKeeperStates.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GoalKeeperStates.h; sourceTree = "<group>"; };
+		1DA0651B1A03C97F001BF331 /* Logger.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Logger.cpp; sourceTree = "<group>"; };
+		1DA0651C1A03C97F001BF331 /* Logger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Logger.h; sourceTree = "<group>"; };
+		1DA0651E1A03C97F001BF331 /* MessageDispatcher.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MessageDispatcher.cpp; sourceTree = "<group>"; };
+		1DA0651F1A03C97F001BF331 /* MessageDispatcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageDispatcher.h; sourceTree = "<group>"; };
+		1DA065201A03C97F001BF331 /* Telegram.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Telegram.h; sourceTree = "<group>"; };
+		1DA065221A03C97F001BF331 /* autolist.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = autolist.h; sourceTree = "<group>"; };
+		1DA065231A03C97F001BF331 /* CellSpacePartition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CellSpacePartition.h; sourceTree = "<group>"; };
+		1DA065241A03C97F001BF331 /* FrameCounter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FrameCounter.cpp; sourceTree = "<group>"; };
+		1DA065251A03C97F001BF331 /* FrameCounter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FrameCounter.h; sourceTree = "<group>"; };
+		1DA065261A03C97F001BF331 /* iniFileLoaderBase.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = iniFileLoaderBase.cpp; sourceTree = "<group>"; };
+		1DA065271A03C97F001BF331 /* iniFileLoaderBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iniFileLoaderBase.h; sourceTree = "<group>"; };
+		1DA065281A03C97F001BF331 /* PriorityQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PriorityQueue.h; sourceTree = "<group>"; };
+		1DA065291A03C97F001BF331 /* Smoother.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Smoother.h; sourceTree = "<group>"; };
+		1DA0652A1A03C97F001BF331 /* Stream_Utility_Functions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Stream_Utility_Functions.h; sourceTree = "<group>"; };
+		1DA0652B1A03C97F001BF331 /* TypeToString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TypeToString.h; sourceTree = "<group>"; };
+		1DA0652C1A03C97F001BF331 /* utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = utils.h; sourceTree = "<group>"; };
+		1DA0652D1A03C97F001BF331 /* ParamLoader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ParamLoader.cpp; sourceTree = "<group>"; };
+		1DA0652E1A03C97F001BF331 /* ParamLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParamLoader.h; sourceTree = "<group>"; };
+		1DA0652F1A03C97F001BF331 /* PlayerBase.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PlayerBase.cpp; sourceTree = "<group>"; };
+		1DA065301A03C97F001BF331 /* PlayerBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayerBase.h; sourceTree = "<group>"; };
+		1DA065311A03C97F001BF331 /* resource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = resource.h; sourceTree = "<group>"; };
+		1DA065321A03C97F001BF331 /* SoccerBall.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SoccerBall.cpp; sourceTree = "<group>"; };
+		1DA065331A03C97F001BF331 /* SoccerBall.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SoccerBall.h; sourceTree = "<group>"; };
+		1DA065341A03C97F001BF331 /* SoccerMessages.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SoccerMessages.cpp; sourceTree = "<group>"; };
+		1DA065351A03C97F001BF331 /* SoccerMessages.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SoccerMessages.h; sourceTree = "<group>"; };
+		1DA065361A03C97F001BF331 /* SoccerPitch.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SoccerPitch.cpp; sourceTree = "<group>"; };
+		1DA065371A03C97F001BF331 /* SoccerPitch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SoccerPitch.h; sourceTree = "<group>"; };
+		1DA065381A03C97F001BF331 /* SoccerTeam.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SoccerTeam.cpp; sourceTree = "<group>"; };
+		1DA065391A03C97F001BF331 /* SoccerTeam.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SoccerTeam.h; sourceTree = "<group>"; };
+		1DA0653A1A03C97F001BF331 /* SteeringBehaviors.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SteeringBehaviors.cpp; sourceTree = "<group>"; };
+		1DA0653B1A03C97F001BF331 /* SteeringBehaviors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SteeringBehaviors.h; sourceTree = "<group>"; };
+		1DA0653C1A03C97F001BF331 /* SupportSpotCalculator.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SupportSpotCalculator.cpp; sourceTree = "<group>"; };
+		1DA0653D1A03C97F001BF331 /* SupportSpotCalculator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SupportSpotCalculator.h; sourceTree = "<group>"; };
+		1DA0653E1A03C97F001BF331 /* TeamStates.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TeamStates.cpp; sourceTree = "<group>"; };
+		1DA0653F1A03C97F001BF331 /* TeamStates.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TeamStates.h; sourceTree = "<group>"; };
+		1DA065601A03F973001BF331 /* Regulator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Regulator.h; sourceTree = "<group>"; };
 		42049B5216ADBB61005DD1F9 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/CoreMotion.framework; sourceTree = DEVELOPER_DIR; };
 		42049B5316ADBB61005DD1F9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		42049B5416ADBB61005DD1F9 /* OpenAL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenAL.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/OpenAL.framework; sourceTree = DEVELOPER_DIR; };
@@ -167,6 +252,80 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1DA064FC1A03C97F001BF331 /* 2D */ = {
+			isa = PBXGroup;
+			children = (
+				1DA064FD1A03C97F001BF331 /* C2DMatrix.h */,
+				1DA064FE1A03C97F001BF331 /* Geometry.h */,
+				1DA064FF1A03C97F001BF331 /* InvertedAABBox2D.h */,
+				1DA065001A03C97F001BF331 /* Transformations.h */,
+				1DA065011A03C97F001BF331 /* Vector2D.cpp */,
+				1DA065021A03C97F001BF331 /* Vector2D.h */,
+				1DA065031A03C97F001BF331 /* Wall2D.h */,
+				1DA065041A03C97F001BF331 /* WallIntersectionTests.h */,
+			);
+			path = 2D;
+			sourceTree = "<group>";
+		};
+		1DA0650A1A03C97F001BF331 /* FSM */ = {
+			isa = PBXGroup;
+			children = (
+				1DA0650B1A03C97F001BF331 /* State.h */,
+				1DA0650C1A03C97F001BF331 /* StateMachine.h */,
+			);
+			path = FSM;
+			sourceTree = "<group>";
+		};
+		1DA0650D1A03C97F001BF331 /* Game */ = {
+			isa = PBXGroup;
+			children = (
+				1DA0650E1A03C97F001BF331 /* BaseGameEntity.cpp */,
+				1DA0650F1A03C97F001BF331 /* BaseGameEntity.h */,
+				1DA065101A03C97F001BF331 /* EntityFunctionTemplates.h */,
+				1DA065111A03C97F001BF331 /* EntityManager.cpp */,
+				1DA065121A03C97F001BF331 /* EntityManager.h */,
+				1DA065131A03C97F001BF331 /* MovingEntity.h */,
+				1DA065141A03C97F001BF331 /* Region.h */,
+			);
+			path = Game;
+			sourceTree = "<group>";
+		};
+		1DA0651D1A03C97F001BF331 /* Messaging */ = {
+			isa = PBXGroup;
+			children = (
+				1DA0651E1A03C97F001BF331 /* MessageDispatcher.cpp */,
+				1DA0651F1A03C97F001BF331 /* MessageDispatcher.h */,
+				1DA065201A03C97F001BF331 /* Telegram.h */,
+			);
+			path = Messaging;
+			sourceTree = "<group>";
+		};
+		1DA065211A03C97F001BF331 /* misc */ = {
+			isa = PBXGroup;
+			children = (
+				1DA065221A03C97F001BF331 /* autolist.h */,
+				1DA065231A03C97F001BF331 /* CellSpacePartition.h */,
+				1DA065241A03C97F001BF331 /* FrameCounter.cpp */,
+				1DA065251A03C97F001BF331 /* FrameCounter.h */,
+				1DA065261A03C97F001BF331 /* iniFileLoaderBase.cpp */,
+				1DA065271A03C97F001BF331 /* iniFileLoaderBase.h */,
+				1DA065281A03C97F001BF331 /* PriorityQueue.h */,
+				1DA065291A03C97F001BF331 /* Smoother.h */,
+				1DA0652A1A03C97F001BF331 /* Stream_Utility_Functions.h */,
+				1DA0652B1A03C97F001BF331 /* TypeToString.h */,
+				1DA0652C1A03C97F001BF331 /* utils.h */,
+			);
+			path = misc;
+			sourceTree = "<group>";
+		};
+		1DA065401A03C97F001BF331 /* Time */ = {
+			isa = PBXGroup;
+			children = (
+				1DA065601A03F973001BF331 /* Regulator.h */,
+			);
+			path = Time;
+			sourceTree = "<group>";
+		};
 		42C932B11491A0DB0098216A = {
 			isa = PBXGroup;
 			children = (
@@ -204,6 +363,44 @@
 		42C932C61491A0DB0098216A /* src */ = {
 			isa = PBXGroup;
 			children = (
+				1DA064FC1A03C97F001BF331 /* 2D */,
+				1DA065051A03C97F001BF331 /* constants.h */,
+				1DA065061A03C97F001BF331 /* FieldPlayer.cpp */,
+				1DA065071A03C97F001BF331 /* FieldPlayer.h */,
+				1DA065081A03C97F001BF331 /* FieldPlayerStates.cpp */,
+				1DA065091A03C97F001BF331 /* FieldPlayerStates.h */,
+				1DA0650A1A03C97F001BF331 /* FSM */,
+				1DA0650D1A03C97F001BF331 /* Game */,
+				1DA065151A03C97F001BF331 /* Goal.cpp */,
+				1DA065161A03C97F001BF331 /* Goal.h */,
+				1DA065171A03C97F001BF331 /* Goalkeeper.cpp */,
+				1DA065181A03C97F001BF331 /* Goalkeeper.h */,
+				1DA065191A03C97F001BF331 /* GoalKeeperStates.cpp */,
+				1DA0651A1A03C97F001BF331 /* GoalKeeperStates.h */,
+				1DA0651B1A03C97F001BF331 /* Logger.cpp */,
+				1DA0651C1A03C97F001BF331 /* Logger.h */,
+				1DA0651D1A03C97F001BF331 /* Messaging */,
+				1DA065211A03C97F001BF331 /* misc */,
+				1DA0652D1A03C97F001BF331 /* ParamLoader.cpp */,
+				1DA0652E1A03C97F001BF331 /* ParamLoader.h */,
+				1DA0652F1A03C97F001BF331 /* PlayerBase.cpp */,
+				1DA065301A03C97F001BF331 /* PlayerBase.h */,
+				1DA065311A03C97F001BF331 /* resource.h */,
+				1DA065321A03C97F001BF331 /* SoccerBall.cpp */,
+				1DA065331A03C97F001BF331 /* SoccerBall.h */,
+				1DA065341A03C97F001BF331 /* SoccerMessages.cpp */,
+				1DA065351A03C97F001BF331 /* SoccerMessages.h */,
+				1DA065361A03C97F001BF331 /* SoccerPitch.cpp */,
+				1DA065371A03C97F001BF331 /* SoccerPitch.h */,
+				1DA065381A03C97F001BF331 /* SoccerTeam.cpp */,
+				1DA065391A03C97F001BF331 /* SoccerTeam.h */,
+				1DA0653A1A03C97F001BF331 /* SteeringBehaviors.cpp */,
+				1DA0653B1A03C97F001BF331 /* SteeringBehaviors.h */,
+				1DA0653C1A03C97F001BF331 /* SupportSpotCalculator.cpp */,
+				1DA0653D1A03C97F001BF331 /* SupportSpotCalculator.h */,
+				1DA0653E1A03C97F001BF331 /* TeamStates.cpp */,
+				1DA0653F1A03C97F001BF331 /* TeamStates.h */,
+				1DA065401A03C97F001BF331 /* Time */,
 				42C932EF1491A5160098216A /* SimpleSoccer.cpp */,
 				42C932F01491A5160098216A /* SimpleSoccer.h */,
 			);
@@ -443,7 +640,28 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1DA065501A03C97F001BF331 /* FrameCounter.cpp in Sources */,
+				1DA065551A03C97F001BF331 /* SoccerMessages.cpp in Sources */,
+				1DA065581A03C97F001BF331 /* SteeringBehaviors.cpp in Sources */,
+				1DA0654F1A03C97F001BF331 /* MessageDispatcher.cpp in Sources */,
+				1DA065561A03C97F001BF331 /* SoccerPitch.cpp in Sources */,
+				1DA0654D1A03C97F001BF331 /* GoalKeeperStates.cpp in Sources */,
+				1DA065571A03C97F001BF331 /* SoccerTeam.cpp in Sources */,
+				1DA065511A03C97F001BF331 /* iniFileLoaderBase.cpp in Sources */,
+				1DA0655A1A03C97F001BF331 /* TeamStates.cpp in Sources */,
+				1DA065521A03C97F001BF331 /* ParamLoader.cpp in Sources */,
+				1DA0654E1A03C97F001BF331 /* Logger.cpp in Sources */,
+				1DA065491A03C97F001BF331 /* BaseGameEntity.cpp in Sources */,
+				1DA065461A03C97F001BF331 /* Vector2D.cpp in Sources */,
+				1DA065471A03C97F001BF331 /* FieldPlayer.cpp in Sources */,
+				1DA065541A03C97F001BF331 /* SoccerBall.cpp in Sources */,
 				42C932F11491A5160098216A /* SimpleSoccer.cpp in Sources */,
+				1DA0654B1A03C97F001BF331 /* Goal.cpp in Sources */,
+				1DA0654A1A03C97F001BF331 /* EntityManager.cpp in Sources */,
+				1DA065591A03C97F001BF331 /* SupportSpotCalculator.cpp in Sources */,
+				1DA0654C1A03C97F001BF331 /* Goalkeeper.cpp in Sources */,
+				1DA065481A03C97F001BF331 /* FieldPlayerStates.cpp in Sources */,
+				1DA065531A03C97F001BF331 /* PlayerBase.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -571,7 +789,7 @@
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				USER_HEADER_SEARCH_PATHS = "";
+				USER_HEADER_SEARCH_PATHS = src;
 				VALID_ARCHS = x86_64;
 				WRAPPER_EXTENSION = app;
 			};
@@ -605,7 +823,7 @@
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				USER_HEADER_SEARCH_PATHS = "";
+				USER_HEADER_SEARCH_PATHS = src;
 				VALID_ARCHS = x86_64;
 				WRAPPER_EXTENSION = app;
 			};

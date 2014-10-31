@@ -178,7 +178,7 @@ void SimpleSoccer::update(float elapsedTime) {
 	//_scene->findNode("Camera")->rotateY(MATH_DEG_TO_RAD((float)elapsedTime / 1000.0f * 180.0f));
 	//_scene->findNode("Camera")->translateForward(-1.0f);
 
-	_soccerPitch->Update();
+	_soccerPitch->Update(elapsedTime);
 
 	auto ball = _soccerPitch->Ball();
 	simulateToWorld(_ball, ball->Pos());

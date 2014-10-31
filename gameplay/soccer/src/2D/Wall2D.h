@@ -12,7 +12,7 @@
 //
 //------------------------------------------------------------------------
 //#include "misc/Cgdi.h"
-#include "2d/Vector2D.h"
+#include "2D/Vector2D.h"
 #include <fstream>
 
 
@@ -72,7 +72,7 @@ public:
   
   Vector2D Center()const{return (m_vA+m_vB)/2.0;}
 
-  std::ostream& Wall2D::Write(std::ostream& os)const
+  std::ostream& Write(std::ostream& os)const
   {
     os << std::endl;
     os << From() << ",";

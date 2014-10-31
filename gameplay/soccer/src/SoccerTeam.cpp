@@ -9,6 +9,7 @@
 #include "GoalKeeperStates.h"
 #include "ParamLoader.h"
 #include "2D/geometry.h"
+#include "2D/Transformations.h"
 #include "Game/EntityManager.h"
 #include "Messaging/MessageDispatcher.h"
 #include "SoccerMessages.h"
@@ -81,7 +82,7 @@ SoccerTeam::~SoccerTeam()
 //  iterates through each player's update function and calculates 
 //  frequently accessed info
 //------------------------------------------------------------------------
-void SoccerTeam::Update()
+void SoccerTeam::Update(float elapsedTime)
 {
   //this information is used frequently so it's more efficient to 
   //calculate it just once each frame
@@ -91,14 +92,18 @@ void SoccerTeam::Update()
   //also handles the 'kick off' state where a team must return to their
   //kick off positions before the whistle is blown
   m_pStateMachine->Update();
+    
+    m_pSupportSpotCalc->Update(elapsedTime);
   
   //now update each player
-  std::vector<PlayerBase*>::iterator it = m_Players.begin();
-
-  for (it; it != m_Players.end(); ++it)
-  {
-    (*it)->Update();
-  }
+//  for (std::vector<PlayerBase*>::iterator it = m_Players.begin(); it != m_Players.end(); ++it)
+//  {
+//    (*it)->Update(elapsedTime);
+//  }
+    
+    for(auto player : m_Players) {
+        player->Update(elapsedTime);
+    }
 
 }
 
@@ -110,6 +115,23 @@ void SoccerTeam::Update()
 void SoccerTeam::CalculateClosestPlayerToBall()
 {
   double ClosestSoFar = MaxFloat;
+    
+    
+//    for (auto player: m_Players) {
+//        auto it = (PlayerBase*)player;
+//        //calculate the dist. Use the squared value to avoid sqrt
+//        double dist = Vec2DDistanceSq(it->Pos(), Pitch()->Ball()->Pos());
+//        
+//        //keep a record of this value for each player
+//        it->SetDistSqToBall(dist);
+//        
+//        if (dist < ClosestSoFar)
+//        {
+//            ClosestSoFar = dist;
+//            
+//            m_pPlayerClosestToBall = it;
+//        }
+//    }
 
   std::vector<PlayerBase*>::iterator it = m_Players.begin();
 
@@ -401,6 +423,7 @@ bool SoccerTeam::isPassSafeFromAllOpponents(Vector2D                from,
   return true;
 }
 
+
 //------------------------ CanShoot --------------------------------------
 //
 //  Given a ball position, a kicking power and a reference to a vector2D
@@ -414,6 +437,7 @@ bool SoccerTeam::CanShoot(Vector2D  BallPos,
                           double     power, 
                           Vector2D& ShotTarget)const
 {
+    
   //the number of randomly created shot targets this method will test 
   int NumAttempts = Prm.NumAttemptsToFindValidStrike;
 
