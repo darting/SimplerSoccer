@@ -42,8 +42,8 @@
     <Compile Include="Common\Collision2D.cs" />
     <Compile Include="BaseGameEntity.cs" />
     <Compile Include="MovingEntity.cs" />
-    <Compile Include="Common\Vector2D.cs" />
     <Compile Include="Messaging\Telegram.cs" />
+    <Compile Include="Math\Vector2D.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <ItemGroup>
@@ -54,5 +54,6 @@
   <ItemGroup>
     <Folder Include="Common\" />
     <Folder Include="Messaging\" />
+    <Folder Include="Math\" />
   </ItemGroup>
 </Project>

@@ -8,13 +8,13 @@ namespace SimplerSoccer {
         public Goal(Vector2 left, Vector2 right, Vector2 facing) {
             LeftPost = left;
             RightPost = right;
-            Center = (left + right) / 2.0;
+            Center = (left + right) / 2f;
             NumGoalsScored = 0;
             Facing = facing;
         }
 
         public bool Scored(SoccerBall ball) {
-            if (Collision2D.LineIntersection(ball.Pos(), ball.OldPos(), LeftPost, RightPost)) {
+            if (Collision2D.LineIntersection(ball.Position, ball.OldPosition, LeftPost, RightPost)) {
                 NumGoalsScored++;
                 return true;
             }
