@@ -27,15 +27,75 @@ material textured
     }
 }
 
+material colored
+{
+    u_worldViewProjectionMatrix = WORLD_VIEW_PROJECTION_MATRIX
+    
+    renderState
+    {
+        cullFace = true
+        depthTest = true
+    }
+    
+    technique
+    {
+        pass 
+        {
+            vertexShader = res/shaders/colored.vert
+            fragmentShader = res/shaders/colored.frag
+        }
+    }
+}
+
+material 1 : textured
+{
+    u_inverseTransposeWorldViewMatrix = INVERSE_TRANSPOSE_WORLD_VIEW_MATRIX
+    
+    sampler u_diffuseTexture
+    {
+        path = female02_1.png
+        wrapS = REPEAT
+        wrapT = REPEAT
+    }
+
+}
+
+material 10 : textured
+{
+    sampler u_diffuseTexture
+    {
+        path = female02_10.png
+        wrapS = REPEAT
+        wrapT = REPEAT
+    }
+
+}
+
+material 2 : textured
+{
+    sampler u_diffuseTexture
+    {
+        path = female02_2.png
+        wrapS = REPEAT
+        wrapT = REPEAT
+    }
+
+}
+
+material 3 : colored
+{
+    u_diffuseColor = 1, 1, 1, 1
+    u_inverseTransposeWorldViewMatrix = INVERSE_TRANSPOSE_WORLD_VIEW_MATRIX
+    
+}
+
 material Platonic : textured
 {
-    u_cameraPosition = CAMERA_WORLD_POSITION
-    u_inverseTransposeWorldViewMatrix = INVERSE_TRANSPOSE_WORLD_VIEW_MATRIX
     u_specularExponent = 9.60784
     
     sampler u_diffuseTexture
     {
-        path = PlatonicSurface_Color.jpg
+        path = PlatonicSurface_Color.png
         wrapS = REPEAT
         wrapT = REPEAT
     }
@@ -95,7 +155,7 @@ material rust : textured
     
     sampler u_diffuseTexture
     {
-        path = rust2.JPG
+        path = rust2.png
         wrapS = REPEAT
         wrapT = REPEAT
     }
