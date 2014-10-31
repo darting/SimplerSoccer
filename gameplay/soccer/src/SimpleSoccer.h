@@ -2,6 +2,11 @@
 #define SimpleSoccer_H_
 
 #include "gameplay.h"
+#include "ParamLoader.h"
+#include "SoccerPitch.h"
+#include "SoccerBall.h"
+#include "SoccerTeam.h"
+#include "PlayerBase.h"
 
 using namespace gameplay;
 
@@ -55,6 +60,12 @@ private:
      * Draws the scene each frame.
      */
     bool drawScene(Node* node);
+
+	void setupTeamMembers(SoccerTeam* team, Node* player);
+
+	void updateTeamMembers(SoccerTeam* team);
+
+	void simulateToWorld(Node* worldNode, Vector2D simulatePos);
 
     Scene* _scene;
     bool _wireframe;
