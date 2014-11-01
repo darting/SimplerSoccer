@@ -8,6 +8,8 @@
 #include "SoccerTeam.h"
 #include "PlayerBase.h"
 
+#include <math.h>
+
 using namespace gameplay;
 
 /**
@@ -55,6 +57,8 @@ protected:
     void render(float elapsedTime);
 
 private:
+    
+    bool initializeScene(Node* node);
 
     /**
      * Draws the scene each frame.

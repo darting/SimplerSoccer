@@ -111,21 +111,12 @@ material Platonic : textured
 
 material field : textured
 {
-    u_specularExponent = 9.60784
     
     sampler u_diffuseTexture
     {
         path = soccer_field.png
         wrapS = REPEAT
         wrapT = REPEAT
-    }
-
-    technique
-    {
-        pass 
-        {
-            defines = SPECULAR
-        }
     }
 }
 

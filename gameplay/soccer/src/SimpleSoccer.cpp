@@ -110,6 +110,10 @@ void SimpleSoccer::initialize() {
 	player->rotateZ(MATH_DEG_TO_RAD(180.0f));
 	setupTeamMembers(_soccerPitch->m_pBlueTeam, player);
 	_scene->removeNode(player);
+    
+    _scene->removeNode(_scene->findNode("Lamp"));
+//    _scene->removeNode(_scene->findNode("Sun"));
+    
 
 	_ball = _scene->findNode("Platonic");
 
@@ -124,18 +128,25 @@ void SimpleSoccer::initialize() {
 	/*Node* boxNode = _scene->findNode("box");
 	Model* boxModel = boxNode->getModel();
 	Material* boxMaterial = boxModel->getMaterial();*/
+    
+    
 
 	// Set the aspect ratio for the scene's camera to match the current resolution
-	/*Node* lightNode = Node::create("directionalLight1");
-	Light* light = Light::createDirectional(Vector3(1, 0, 0));
+	Node* lightNode = Node::create("Lamp");
+	Light* light = Light::createPoint(Vector3::one(), 16.0f);
 	lightNode->setLight(light);
-	_scene->addNode(lightNode);*/
+	_scene->addNode(lightNode);
+    
+//    auto lightNode = _scene->findNode("Lamp");
+    lightNode->setTranslation(5.0f, -5.0f, 1.0f);
+    
+    _scene->visit(this, &SimpleSoccer::initializeScene);
 
 	/*Material* material = _modelNode->getModel()->getMaterial();
 	MaterialParameter* parameter = material->getParameter("u_lightDirection");
 	parameter->bindValue(lightNode, &Node::getForwardVectorView);*/
 
-	cameraNode->setTranslation(Vector3{ 15.0f, 10.0f, 0.0f });
+	cameraNode->setTranslation(Vector3{ 5.0f, 20.0f, 0.0f });
 
 	Matrix matrix;
 	Matrix::createLookAt(cameraNode->getTranslation(), Vector3::zero(), Vector3::unitY(), &matrix);
@@ -144,6 +155,49 @@ void SimpleSoccer::initialize() {
 	Quaternion rotation;
 	matrix.getRotation(&rotation);
 	cameraNode->setRotation(rotation);
+}
+
+bool SimpleSoccer::initializeScene(Node* node)
+{
+    static Node* directionalLight = _scene->findNode("Sun");
+    static Node* pointLight = _scene->findNode("Lamp");
+    
+    Model* model = node->getModel();
+    if (model)
+    {
+        auto material = model->getMaterial();
+        if(!material)
+            return true;
+        
+        auto technique = material->getTechnique();
+        auto effect =  technique->getPassByIndex(0)->getEffect();
+        
+//        auto uniforms = effect->getUniformCount();
+//        for (int i = 0; i < uniforms; ++i) {
+//            auto uniform = effect->getUniform(i);
+//            auto name = uniform->getName();
+//        }
+        
+//        if (effect->getUniform("u_directionalLightDirection"))
+//        {
+//            material->getParameter("u_ambientColor")->setValue(_scene->getAmbientColor());
+//            material->getParameter("u_directionalLightColor[0]")->setValue(directionalLight->getLight()->getColor());
+//            material->getParameter("u_directionalLightDirection[0]")->setValue(directionalLight->getForwardVectorView());
+//        }
+        
+        if (effect->getUniform("u_pointLightPosition"))
+        {
+            material->getParameter("u_ambientColor")->setValue(_scene->getAmbientColor());
+            material->getParameter("u_pointLightColor[0]")->setValue(pointLight->getLight()->getColor());
+//            material->getParameter("u_pointLightPosition[0]")->setValue(pointLight->getTranslationView());
+            technique->getParameter("u_pointLightPosition[0]")->bindValue(pointLight, &Node::getTranslationView);
+            material->getParameter("u_pointLightRangeInverse[0]")->setValue(pointLight->getLight()->getRangeInverse());
+
+            
+        }
+    }
+    
+    return true;
 }
 
 void SimpleSoccer::setupTeamMembers(SoccerTeam* team, Node* player) {
@@ -177,11 +231,15 @@ void SimpleSoccer::update(float elapsedTime) {
 	// Rotate model
 	//_scene->findNode("Camera")->rotateY(MATH_DEG_TO_RAD((float)elapsedTime / 1000.0f * 180.0f));
 	//_scene->findNode("Camera")->translateForward(-1.0f);
+    
+//    _scene->findNode("Lamp")->rotateY(MATH_DEG_TO_RAD((float)elapsedTime / 1000.0f * 180.0f));
+    _scene->findNode("Lamp")->translate(sinf(elapsedTime), 2.0f, cosf(elapsedTime));
 
 	_soccerPitch->Update(elapsedTime);
 
 	auto ball = _soccerPitch->Ball();
 	simulateToWorld(_ball, ball->Pos());
+    _ball->rotateY(MATH_DEG_TO_RAD((float)elapsedTime / 1000.0f * 180.0f));
 
 	updateTeamMembers(_soccerPitch->m_pRedTeam);
 	updateTeamMembers(_soccerPitch->m_pBlueTeam);

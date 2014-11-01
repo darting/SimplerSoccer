@@ -14,6 +14,36 @@ scene
         material = res/soccer.material#ground
     }
 
+    node goal1
+    {
+        material = res/soccer.material#rust
+    }
+
+    node goal2
+    {
+        material = res/soccer.material#rust
+    }
+
+    node player
+    {
+        
+    }
+
+    node railing
+    {
+        
+    }
+
+    node railing_back
+    {
+        
+    }
+
+    node soccer_field
+    {
+        material = res/soccer.material#field
+    }
+
     physics
     {
         gravity = 0.0, -9.8, 0.0
