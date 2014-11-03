@@ -217,8 +217,6 @@ xcopy ..\..\..\..\blackberry\GamePlay\gameplay\res\ui res\ui\* /s /y /d</Command
     <ClCompile Include="src\SteeringBehaviors.cpp" />
     <ClCompile Include="src\SupportSpotCalculator.cpp" />
     <ClCompile Include="src\TeamStates.cpp" />
-    <ClCompile Include="src\Time\CrudeTimer.cpp" />
-    <ClCompile Include="src\Time\PrecisionTimer.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Logger.h" />
@@ -264,8 +262,6 @@ xcopy ..\..\..\..\blackberry\GamePlay\gameplay\res\ui res\ui\* /s /y /d</Command
     <ClInclude Include="src\SteeringBehaviors.h" />
     <ClInclude Include="src\SupportSpotCalculator.h" />
     <ClInclude Include="src\TeamStates.h" />
-    <ClInclude Include="src\Time\CrudeTimer.h" />
-    <ClInclude Include="src\Time\PrecisionTimer.h" />
     <ClInclude Include="src\Time\Regulator.h" />
   </ItemGroup>
   <ItemGroup>

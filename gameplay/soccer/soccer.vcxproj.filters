@@ -123,8 +123,6 @@
     <ClInclude Include="src\TeamStates.h" />
     <ClInclude Include="src\FSM\State.h" />
     <ClInclude Include="src\FSM\StateMachine.h" />
-    <ClInclude Include="src\Time\CrudeTimer.h" />
-    <ClInclude Include="src\Time\PrecisionTimer.h" />
     <ClInclude Include="src\Time\Regulator.h" />
     <ClInclude Include="src\Logger.h" />
   </ItemGroup>
@@ -152,8 +150,6 @@
     <ClCompile Include="src\SteeringBehaviors.cpp" />
     <ClCompile Include="src\SupportSpotCalculator.cpp" />
     <ClCompile Include="src\TeamStates.cpp" />
-    <ClCompile Include="src\Time\CrudeTimer.cpp" />
-    <ClCompile Include="src\Time\PrecisionTimer.cpp" />
     <ClCompile Include="src\Logger.cpp" />
   </ItemGroup>
   <ItemGroup>
